@@ -95,6 +95,9 @@ def main():
         f.write('No \t Layer Name \t Neuron Idx \t Mask \t PoisonLoss \t PoisonACC \t CleanLoss \t CleanACC\n')
         f.writelines(results)
 
+    net = net.to('cpu')
+    torch.save(net.state_dict(), './save/pruned_model')
+
 
 def read_data(file_name):
     tempt = pd.read_csv(file_name, sep='\s+', skiprows=1, header=None)
