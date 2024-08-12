@@ -40,8 +40,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 def main():
-    MEAN_CIFAR10 = (0.4914, 0.4822, 0.4465)
-    STD_CIFAR10 = (0.2023, 0.1994, 0.2010)
+    MEAN_CIFAR10 = (0.485, 0.456, 0.406)
+    STD_CIFAR10 = (0.229, 0.224, 0.225)
     transform_test = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(MEAN_CIFAR10, STD_CIFAR10)
