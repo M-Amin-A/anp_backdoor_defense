@@ -96,7 +96,8 @@ def main():
         f.writelines(results)
 
     net = net.to('cpu')
-    torch.save(net.state_dict(), './save/pruned_model')
+    file_name = os.path.join(args.output_dir, 'pruned_model.pt')
+    torch.save(net.state_dict(), file_name)
 
 
 def read_data(file_name):
