@@ -47,7 +47,7 @@ def main():
     MEAN_CIFAR10 = (0.485, 0.456, 0.406)
     STD_CIFAR10 = (0.229, 0.224, 0.225)
     transform_train = transforms.Compose([
-        transforms.RandomCrop(32, padding=4),
+        # transforms.RandomCrop(32, padding=4),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(MEAN_CIFAR10, STD_CIFAR10)
